@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <h1>Cloud Cafe</h1>
+
+        <div class="content">
+
+            <form id="add-cafe-form">
+                <input type="text" name="name" placeholder="Café Name">
+                <input type="text" name="city" placeholder="Café City">
+                <button>Add Café</button>
+
+
+            </form>
+
+            <ul id="cafe-list"></ul> <!--Where we want to output data retrieved from DB-->
+
+        </div>
+
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyA6XHF8A0zHrbaXkV5_xtsJhLZmeSJ2WFY",
+        authDomain: "cafeweb-203e5.firebaseapp.com",
+        databaseURL: "https://cafeweb-203e5.firebaseio.com",
+        projectId: "cafeweb-203e5",
+        storageBucket: "cafeweb-203e5.appspot.com",
+        messagingSenderId: "716771855272",
+        appId: "1:716771855272:web:e341f237c64a9719c6ab9d"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db=firebase.firestore();
+    db.settings({timestampInSnapshots:true});
+    </script>
+    <script src="app.js"></script>
+    </body>
+</html>
